@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReMida AI - Overlook</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <h3 class="sidebar-title" data-modal="tools-modal"><i class="fas fa-tools"></i> Strumenti Utili</h3>
+            <h3 class="sidebar-title" data-modal="glossary-modal"><i class="fas fa-book"></i> Glossario</h3>
+            <h3 class="sidebar-title" data-modal="other-modal"><i class="fas fa-ellipsis-h"></i> Altro</h3>
+        </div>
+        <div class="main-content">
+            <div class="dashboard-header">
+                <h1><i class="fas fa-chart-line"></i> Overlook</h1>
+                <label class="theme-switch">
+                    <input type="checkbox" id="themeToggle">
+                    <span class="slider"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></span>
+                </label>
+            </div>
+            <div class="dashboard-grid">
+                <div class="card overview">
+                    <h2><i class="fas fa-wallet"></i> Riepilogo Finanziario</h2>
+                    <canvas id="financeChart"></canvas>
+                </div>
+                <div class="card asset-breakdown blurred">
+                    <h2><i class="fas fa-pie-chart"></i> Composizione Patrimonio</h2>
+                    <canvas id="assetChart"></canvas>
+                    <div class="blur-overlay">Dati incompleti</div>
+                    <div class="hover-message">Continua a parlare con ReMida per sbloccare questo grafico</div>
+                </div>
+                <div class="card savings-debt">
+                    <h2><i class="fas fa-chart-bar"></i> Risparmi vs Debiti</h2>
+                    <canvas id="savingsDebtChart"></canvas>
+                </div>
+            </div>
+            <button class="back-button" onclick="window.location.href='index.html'"><i class="fas fa-arrow-left"></i> Torna alla Chat</button>
+        </div>
+    </div>
+
+    <!-- Modali -->
+    <div id="tools-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3><i class="fas fa-tools"></i> Strumenti Utili</h3>
+            <div class="tool">
+                <h4>Calcolatore PAC</h4>
+                <div class="pac-inputs">
+                    <input type="number" id="pacAmount" placeholder="Importo mensile (€)" min="0">
+                    <input type="number" id="pacYears" placeholder="Durata (anni)" min="1">
+                    <input type="number" id="pacRate" placeholder="Rendimento annuo (%)" min="0" step="0.1">
+                    <button id="calculatePac"><i class="fas fa-play"></i> Calcola</button>
+                </div>
+                <div id="pacResult" class="pac-result"></div>
+            </div>
+        </div>
+    </div>
+    <div id="glossary-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3><i class="fas fa-book"></i> Glossario</h3>
+            <ul class="glossary">
+                <li><strong>PAC</strong>: Piano di Accumulo Capitale, investimento graduale nel tempo.</li>
+                <li><strong>Rendimento</strong>: Guadagno percentuale su un investimento.</li>
+            </ul>
+        </div>
+    </div>
+    <div id="other-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3><i class="fas fa-ellipsis-h"></i> Altro</h3>
+            <p>Funzionalità in arrivo!</p>
+        </div>
+    </div>
+
+    <script src="overlook.js"></script>
+</body>
+</html>

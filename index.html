@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReMida AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="formContainer" class="form-container">
+        <h1><i class="fas fa-robot"></i> Benvenuto in ReMida AI</h1>
+        <p>Iniziamo con qualche info su di te. Rispondi una domanda alla volta!</p>
+        <div class="progress-indicator"></div>
+        <div id="conversation" class="conversation">
+            <div id="currentQuestion" class="question"></div>
+            <input id="currentInput" type="text" placeholder="Rispondi qui..." autocomplete="off">
+            <button id="nextButton" onclick="nextQuestion()"><i class="fas fa-arrow-right"></i> Avanti</button>
+        </div>
+    </div>
+    <div id="loading" class="loading" style="display: none;">
+        Ok, ho tutto, ora posso aiutarti! <img src="loading.gif" alt="Caricamento">
+    </div>
+    <div id="chatContainer" class="chat-container" style="display: none;">
+        <div class="chat-header">
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+                <div class="menu-dropdown">
+                    <a href="overlook.html">Vai a Overlook</a>
+                </div>
+            </div>
+            <label class="theme-switch">
+                <input type="checkbox" id="themeToggle">
+                <span class="slider"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></span>
+            </label>
+        </div>
+        <div id="chatbox" class="chatbox">
+            <div id="dataSummary" class="data-summary" style="display: none;"></div>
+        </div>
+        <div id="quickReplies" class="quick-replies"></div>
+        <div class="input-container">
+            <input type="text" id="userInput" placeholder="Parla con ReMida...">
+            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
