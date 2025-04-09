@@ -12,7 +12,7 @@ const themeToggle = document.getElementById('themeToggle');
 const progressIndicator = document.querySelector('.progress-indicator');
 
 // Configurazione API OpenRouter
-const API_KEY = process.env.SECRET;
+const API_KEY = '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'; // Sostituisci con la tua chiave se diversa
 const API_URL = 'https://openrouter.ai/api/v1/chat/completions';
 
 // Stato dell'utente
